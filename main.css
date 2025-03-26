@@ -1,4 +1,9 @@
 body {
-    width: 1000px;
+    width: 900px;
     margin: auto;
+    padding-top: 20px;
+}
+
+h1 {
+    justify-self: center;
 }
