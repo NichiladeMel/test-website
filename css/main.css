@@ -1,6 +1,7 @@
 :root {
     --reg-font-color: black;
     --light-font-color: #101010;
+    --font-color-on-prepage: white;
     --reg-font: "Roboto", sans-serif;
     --special-font: "Rozha One", serif;
     --preloader-bar-width: 300px;
@@ -74,7 +75,15 @@ a {
 }
 
 #pre-page .hero-heading {
-    color: white;
+    color: var(--font-color-on-prepage);
+}
+
+.cursor {
+    display: inline-block;
+    height: 9rem;
+    width: 2px;
+    background-color: var(--font-color-on-prepage);
+    transform: translateY(2.5rem);
 }
 
 #page-content {
@@ -111,14 +120,6 @@ a {
     font-size: 6.5rem;
     color: var(--reg-font-color);
     padding-right: 5px;
-}
-
-.cursor {
-    display: inline-block;
-    height: 9rem;
-    width: 2px;
-    background-color: var(--reg-font-color);
-    transform: translateY(2.5rem);
 }
 
 .blink {
