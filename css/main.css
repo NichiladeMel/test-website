@@ -1,0 +1,177 @@
+:root {
+    --reg-font-color: black;
+    --light-font-color: #101010;
+    --reg-font: "Roboto", sans-serif;
+    --special-font: "Rozha One", serif;
+    --preloader-bar-width: 300px;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    overflow: hidden;
+}
+
+a {
+    cursor: pointer;
+}
+
+/* css for preloader */
+
+.preloader {
+    position: absolute;
+    inset: 0;
+    background-color: rgb(0, 0, 0);
+    align-content: center;
+    justify-items: center;
+}
+
+.preloader-container {
+    width: var(--preloader-bar-width);
+    justify-items: center;
+}
+
+.preloader-progress {
+    height: 1px;
+    width: 5px;
+    border-radius: .5px;
+    background-color: #ffffff;
+    animation: 2s infinite alternate ease-in-out progress-bar;
+}
+
+@keyframes progress-bar {
+    0% {
+        width: 0%;
+        transform: translateX(calc(-1 * (var(--preloader-bar-width)/2)));
+    }
+    50% {
+        width: 100%;
+        transform: translateX(0);
+    }
+    100% {
+        width: 0%;
+        transform: translateX(calc(var(--preloader-bar-width)/2));
+    }
+}
+
+.preloader.hidden {
+    display: none;
+    visibility: hidden;
+}
+
+#pre-page {
+    visibility: hidden;
+    position: absolute;
+    inset: 0;
+    background-color: rgb(0, 0, 0);
+    z-index: 2;
+}
+
+#pre-page.visible {
+    visibility: visible;
+}
+
+#pre-page .hero-heading {
+    color: white;
+}
+
+#page-content {
+    visibility: hidden;
+    position: absolute;
+    inset: 0;
+    background-color: rgb(255, 255, 255);
+    z-index: 1;
+}
+
+#page-content.visible {
+    visibility: visible;
+}
+
+/* css for page */
+
+.wrapper {
+    width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+
+/* start of Typewriter effect css */
+
+.typewriter {
+    white-space: nowrap;
+    overflow: hidden;
+    align-items: center;
+}
+
+.hero-heading {
+    display: inline-block;
+    font-family: var(--special-font);
+    font-size: 6.5rem;
+    color: var(--reg-font-color);
+    padding-right: 5px;
+}
+
+.cursor {
+    display: inline-block;
+    height: 9rem;
+    width: 2px;
+    background-color: var(--reg-font-color);
+    transform: translateY(2.5rem);
+}
+
+.blink {
+    animation: blink 1s alternate infinite;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+/* end of Typewriter effect css */
+
+.contactMe {
+    width: fit-content;
+    height: 10vh;
+    position: absolute;
+    top: 0;
+    right: 0;
+    align-content: center;
+}
+
+.contactMe a {
+    font-family: var(--reg-font);
+    text-transform: uppercase;
+    font-size: 1.6rem;
+    color: var(--light-font-color);
+}
+
+.hero {
+    height: 100vh;
+    position: relative;
+    align-content: center;
+    justify-items: center;
+}
+
+.hero-nav {
+    height: 5vh;
+    display: flex;
+    gap: 10rem;
+}
+
+.nav-links {
+    position: relative;
+    font-family: var(--reg-font);
+    text-transform: uppercase;
+    font-size: 1.6rem;
+    line-height: 1;
+    padding: 1rem;
+    color: var(--reg-font-color);
+}
+
+.nav-links:hover {
+    background-color: aqua;
+}
