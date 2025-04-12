@@ -26,7 +26,7 @@
             <main class="hero">
                 <div class="typewriter">
                     <span class="hero-heading"><!--hello, i'm NichiladeMel--></span>
-                    <span class="cursor blink"></span>
+                    <span class="cursor"></span>
                 </div>
                 <nav class="hero-nav"></nav>
             </main>
@@ -41,78 +41,23 @@
         </div>
     
         <main class="hero">
-            <div class="typewriter">
+            <!-- <div class="typewriter"> -->
                 <span class="hero-heading">hello, i'm NichiladeMel</span>
-                <span class="cursor blink"></span>
-            </div>
+            <!-- </div> -->
             <nav class="hero-nav">
                 <a href="#" class="nav-links">webdev</a>
                 <a href="#" class="nav-links">illustrations</a>
                 <a href="#" class="nav-links">python</a>          
             </nav>
         </main>
+        
     </div>
     
 </body>
-<script>
-    //js for preloader
-    const preloader = document.querySelector(".preloader")
-    const prePage = document.querySelector("#pre-page")
-    const pageContent = document.querySelector("#page-content")
-    const startTime = performance.now();
 
-    //js for typewriter
-    const text1 = "hi!";
-    const text2 = "hello, i'm NichiladeMel";
+// gsap extension
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/TextPlugin.min.js"></script>
 
-    const typewriter = {
-        index:0,
-
-        write (text, speed, index=typewriter.index) {
-            if (index < text.length) {
-                document.querySelector(".hero-heading").innerHTML += text[index];
-                index++;
-                setTimeout(() => {typewriter.write(text, speed, index)}, speed);
-            }
-        },
-
-        erase (text, speed, index=typewriter.index) {
-            if (index <= text.length) {
-                index++;
-                document.querySelector(".hero-heading").innerHTML = text.slice(0, -index);
-                setTimeout(() => {typewriter.erase(text, speed, index)}, speed);
-            }
-        },
-        writeLine () {
-            typewriter.write (text1, 150)
-            setTimeout(() => {
-                typewriter.erase(text1, 600);
-                setTimeout( () => {
-                    typewriter.write(text2,100);
-                    setTimeout(() => {
-                        prePage.classList.remove('visible');
-                    }, ((text2.length * 100)+1000));
-                }, ((text1.length + 1)*500))
-            }, ((text1.length + 3)*500)); 
-        }
-    }
-    
-
-    window.addEventListener('load', () => {
-        const loadTime = performance.now() - startTime;
-        const minDuration = 2000; //change to 2000
-        const remainingTime = minDuration - loadTime;
-
-        setTimeout( () => {
-            preloader.classList.add('hidden');
-            prePage.classList.add('visible');
-            pageContent.classList.add('visible');
-            document.body.style.overflow = 'auto';
-
-            typewriter.writeLine();  
-
-        }, Math.max(remainingTime, 0));  
-    });
-
-</script>
+<script src="js/main.js"></script>
 </html>
